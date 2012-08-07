@@ -27,29 +27,7 @@
  vertical axis, or the horizontal axis otherwise.
  @author Fabio Rodella fabio@crocodella.com.br
  */
-@interface PullableView : UIView {
-    
-    CGPoint closedCenter;
-    CGPoint openedCenter;
-    
-    UIView *handleView;
-    UIPanGestureRecognizer *dragRecognizer;
-    UITapGestureRecognizer *tapRecognizer;
-    
-    CGPoint startPos;
-    CGPoint minPos;
-    CGPoint maxPos;
-    
-    BOOL opened;
-    BOOL verticalAxis;
-    
-    BOOL toggleOnTap;
-    
-    BOOL animate;
-    float animationDuration;
-    
-    id<PullableViewDelegate> delegate;
-}
+@interface PullableView : UIView
 
 /**
  The view that is used as the handle for the PullableView. You
