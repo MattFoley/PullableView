@@ -93,4 +93,9 @@
  */
 - (void)setOpened:(BOOL)op animated:(BOOL)anim;
 
+/**
+ Boolean which indicates whether the PullableView is currently opened.
+ */
+@property (nonatomic, readonly) BOOL opened;
+
 @end

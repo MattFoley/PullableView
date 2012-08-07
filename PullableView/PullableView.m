@@ -6,7 +6,6 @@
  */
 
 @interface PullableView()
-@property (readwrite, assign) BOOL opened;
 @property (readwrite, assign) CGPoint startPos;
 @property (readwrite, assign) CGPoint minPos;
 @property (readwrite, assign) CGPoint maxPos;
@@ -56,7 +55,7 @@
         
         [self.handleView addGestureRecognizer:self.tapRecognizer];
         
-        self.opened = NO;
+        _opened = NO;
     }
     return self;
 }
@@ -80,7 +79,7 @@
         }
         
     } else if ([sender state] == UIGestureRecognizerStateChanged) {
-                
+        
         CGPoint translate = [sender translationInView:self.superview];
         
         CGPoint newPos;
@@ -150,7 +149,7 @@
 }
 
 - (void)setOpened:(BOOL)op animated:(BOOL)anim {
-    self.opened = op;
+    _opened = op;
     
     if (anim) {
         [UIView beginAnimations:nil context:nil];
@@ -177,7 +176,7 @@
         }
     }
 }
-         
+
 - (void)animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
     if (finished) {
         // Restores interaction after the animation is over
